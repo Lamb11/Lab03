@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		D3E338E51A74BD7E00B935E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E41A74BD7E00B935E5 /* main.m */; };
 		D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E71A74BD7E00B935E5 /* AppDelegate.m */; };
-		D3E338EB1A74BD7E00B935E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338EA1A74BD7E00B935E5 /* ViewController.m */; };
+		D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338EA1A74BD7E00B935E5 /* Home.m */; };
 		D3E338EE1A74BD7E00B935E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E338EC1A74BD7E00B935E5 /* Main.storyboard */; };
 		D3E338F01A74BD7E00B935E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E338EF1A74BD7E00B935E5 /* Images.xcassets */; };
 		D3E338F31A74BD7E00B935E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */; };
 		D3E338FF1A74BD7E00B935E5 /* Lab03Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338FE1A74BD7E00B935E5 /* Lab03Tests.m */; };
+		D3E339091A74C3D600B935E5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E339081A74C3D600B935E5 /* libsqlite3.0.dylib */; };
+		D3E3390B1A74C45E00B935E5 /* contactos.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D3E3390A1A74C45E00B935E5 /* contactos.sqlite */; };
+		D3E339101A75502A00B935E5 /* persona.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E3390F1A75502A00B935E5 /* persona.m */; };
+		D3E339131A75558C00B935E5 /* personaDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E339121A75558C00B935E5 /* personaDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,20 @@
 		D3E338E41A74BD7E00B935E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3E338E61A74BD7E00B935E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3E338E71A74BD7E00B935E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D3E338E91A74BD7E00B935E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D3E338EA1A74BD7E00B935E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D3E338E91A74BD7E00B935E5 /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
+		D3E338EA1A74BD7E00B935E5 /* Home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Home.m; sourceTree = "<group>"; };
 		D3E338ED1A74BD7E00B935E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3E338EF1A74BD7E00B935E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3E338F21A74BD7E00B935E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3E338F81A74BD7E00B935E5 /* Lab03Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab03Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E338FD1A74BD7E00B935E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E338FE1A74BD7E00B935E5 /* Lab03Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab03Tests.m; sourceTree = "<group>"; };
+		D3E339081A74C3D600B935E5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D3E3390A1A74C45E00B935E5 /* contactos.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = contactos.sqlite; sourceTree = "<group>"; };
+		D3E3390E1A75502A00B935E5 /* persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = persona.h; sourceTree = "<group>"; };
+		D3E3390F1A75502A00B935E5 /* persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = persona.m; sourceTree = "<group>"; };
+		D3E339111A75558C00B935E5 /* personaDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personaDAO.h; sourceTree = "<group>"; };
+		D3E339121A75558C00B935E5 /* personaDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personaDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E339091A74C3D600B935E5 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,7 @@
 		D3E338D61A74BD7E00B935E5 = {
 			isa = PBXGroup;
 			children = (
+				D3E339081A74C3D600B935E5 /* libsqlite3.0.dylib */,
 				D3E338E11A74BD7E00B935E5 /* Lab03 */,
 				D3E338FB1A74BD7E00B935E5 /* Lab03Tests */,
 				D3E338E01A74BD7E00B935E5 /* Products */,
@@ -81,10 +93,11 @@
 		D3E338E11A74BD7E00B935E5 /* Lab03 */ = {
 			isa = PBXGroup;
 			children = (
-				D3E338E61A74BD7E00B935E5 /* AppDelegate.h */,
+				D3E3390D1A754F3E00B935E5 /* modelo */,
 				D3E338E71A74BD7E00B935E5 /* AppDelegate.m */,
-				D3E338E91A74BD7E00B935E5 /* ViewController.h */,
-				D3E338EA1A74BD7E00B935E5 /* ViewController.m */,
+				D3E338E61A74BD7E00B935E5 /* AppDelegate.h */,
+				D3E338E91A74BD7E00B935E5 /* Home.h */,
+				D3E338EA1A74BD7E00B935E5 /* Home.m */,
 				D3E338EC1A74BD7E00B935E5 /* Main.storyboard */,
 				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
 				D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */,
@@ -96,6 +109,7 @@
 		D3E338E21A74BD7E00B935E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3E3390A1A74C45E00B935E5 /* contactos.sqlite */,
 				D3E338E31A74BD7E00B935E5 /* Info.plist */,
 				D3E338E41A74BD7E00B935E5 /* main.m */,
 			);
@@ -117,6 +131,17 @@
 				D3E338FD1A74BD7E00B935E5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3E3390D1A754F3E00B935E5 /* modelo */ = {
+			isa = PBXGroup;
+			children = (
+				D3E3390E1A75502A00B935E5 /* persona.h */,
+				D3E3390F1A75502A00B935E5 /* persona.m */,
+				D3E339111A75558C00B935E5 /* personaDAO.h */,
+				D3E339121A75558C00B935E5 /* personaDAO.m */,
+			);
+			name = modelo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +226,7 @@
 			files = (
 				D3E338EE1A74BD7E00B935E5 /* Main.storyboard in Resources */,
 				D3E338F31A74BD7E00B935E5 /* LaunchScreen.xib in Resources */,
+				D3E3390B1A74C45E00B935E5 /* contactos.sqlite in Resources */,
 				D3E338F01A74BD7E00B935E5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3E338EB1A74BD7E00B935E5 /* ViewController.m in Sources */,
+				D3E339101A75502A00B935E5 /* persona.m in Sources */,
+				D3E339131A75558C00B935E5 /* personaDAO.m in Sources */,
+				D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */,
 				D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */,
 				D3E338E51A74BD7E00B935E5 /* main.m in Sources */,
 			);
