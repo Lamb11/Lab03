@@ -1,16 +1,13 @@
 //
-//  ViewController.h
+//  TomandoFoto.h
 //  Lab03
 //
-//  Created by Alberto Cordero Arellanes on 24/01/15.
+//  Created by Alberto Cordero Arellanes on 03/02/15.
 //  Copyright (c) 2015 AlbertoCorderoArellanes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface Home : UIViewController{
-
-}
+@interface TomandoFoto : UIViewController
 
 @end
-

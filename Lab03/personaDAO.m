@@ -43,7 +43,7 @@
     }
     
     while(sqlite3_step(sqlStatement) == SQLITE_ROW){
-        persona *persona = [persona  init];
+        persona *persona = [persona init];
         persona.identificadorID = sqlite3_column_int(sqlStatement, 0);
         persona.nombrePersona = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 2)];
         persona.statusPersona = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 3)];

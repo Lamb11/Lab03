@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    //[txtNombre setText:persona.nombrePersona];
+    //[txtStatus setText:[NSString stringWithFormat:@"%d", persona.statusPersona]];
 }
 
 - (void)didReceiveMemoryWarning {
