@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3C015CD1A81E650007374E4 /* TomandoFoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C015CC1A81E650007374E4 /* TomandoFoto.m */; };
+		D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487CE1A831C460004A062 /* UIKit.framework */; };
+		D35487D11A831C570004A062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D01A831C570004A062 /* Foundation.framework */; };
+		D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D21A831C680004A062 /* CoreGraphics.framework */; };
 		D3E338E51A74BD7E00B935E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E41A74BD7E00B935E5 /* main.m */; };
 		D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E71A74BD7E00B935E5 /* AppDelegate.m */; };
 		D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338EA1A74BD7E00B935E5 /* Home.m */; };
@@ -30,8 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D3C015CB1A81E650007374E4 /* TomandoFoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TomandoFoto.h; sourceTree = "<group>"; };
-		D3C015CC1A81E650007374E4 /* TomandoFoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TomandoFoto.m; sourceTree = "<group>"; };
+		D35487CE1A831C460004A062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D35487D01A831C570004A062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D35487D21A831C680004A062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D3E338DF1A74BD7E00B935E5 /* Lab03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E338E31A74BD7E00B935E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E338E41A74BD7E00B935E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */,
+				D35487D11A831C570004A062 /* Foundation.framework in Frameworks */,
+				D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */,
 				D3E339091A74C3D600B935E5 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +74,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D35487CD1A831C150004A062 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35487D21A831C680004A062 /* CoreGraphics.framework */,
+				D35487D01A831C570004A062 /* Foundation.framework */,
+				D35487CE1A831C460004A062 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3E338D61A74BD7E00B935E5 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +92,7 @@
 				D3E338E11A74BD7E00B935E5 /* Lab03 */,
 				D3E338FB1A74BD7E00B935E5 /* Lab03Tests */,
 				D3E338E01A74BD7E00B935E5 /* Products */,
+				D35487CD1A831C150004A062 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,11 +112,9 @@
 				D3E338E61A74BD7E00B935E5 /* AppDelegate.h */,
 				D3E338E91A74BD7E00B935E5 /* Home.h */,
 				D3E338EA1A74BD7E00B935E5 /* Home.m */,
-				D3C015CB1A81E650007374E4 /* TomandoFoto.h */,
-				D3C015CC1A81E650007374E4 /* TomandoFoto.m */,
 				D3E338EC1A74BD7E00B935E5 /* Main.storyboard */,
-				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
 				D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */,
+				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
 				D3E338E21A74BD7E00B935E5 /* Supporting Files */,
 			);
 			path = Lab03;
@@ -180,6 +195,7 @@
 				TargetAttributes = {
 					D3E338DE1A74BD7E00B935E5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QXF33N93KH;
 					};
 					D3E338F71A74BD7E00B935E5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -234,7 +250,6 @@
 			files = (
 				D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */,
 				D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */,
-				D3C015CD1A81E650007374E4 /* TomandoFoto.m in Sources */,
 				D3E338E51A74BD7E00B935E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +280,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 		D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
@@ -359,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				INFOPLIST_FILE = Lab03/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,6 +389,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				INFOPLIST_FILE = Lab03/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

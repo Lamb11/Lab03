@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Home : UIViewController{
+@interface Home : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
 
 }
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+- (IBAction)takePhoto:(UIButton *)sender;
+
+- (IBAction)selectphoto:(UIButton *)sender;
 @end
 
