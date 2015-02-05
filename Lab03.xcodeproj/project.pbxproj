@@ -10,6 +10,7 @@
 		D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487CE1A831C460004A062 /* UIKit.framework */; };
 		D35487D11A831C570004A062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D01A831C570004A062 /* Foundation.framework */; };
 		D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D21A831C680004A062 /* CoreGraphics.framework */; };
+		D35487DE1A83BFE70004A062 /* NuevoContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D35487DD1A83BFE70004A062 /* NuevoContacto.m */; };
 		D3E338E51A74BD7E00B935E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E41A74BD7E00B935E5 /* main.m */; };
 		D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E71A74BD7E00B935E5 /* AppDelegate.m */; };
 		D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338EA1A74BD7E00B935E5 /* Home.m */; };
@@ -35,6 +36,8 @@
 		D35487CE1A831C460004A062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D35487D01A831C570004A062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D35487D21A831C680004A062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D35487DC1A83BFE70004A062 /* NuevoContacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuevoContacto.h; sourceTree = "<group>"; };
+		D35487DD1A83BFE70004A062 /* NuevoContacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuevoContacto.m; sourceTree = "<group>"; };
 		D3E338DF1A74BD7E00B935E5 /* Lab03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E338E31A74BD7E00B935E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E338E41A74BD7E00B935E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				D3E338E61A74BD7E00B935E5 /* AppDelegate.h */,
 				D3E338E91A74BD7E00B935E5 /* Home.h */,
 				D3E338EA1A74BD7E00B935E5 /* Home.m */,
+				D35487DC1A83BFE70004A062 /* NuevoContacto.h */,
+				D35487DD1A83BFE70004A062 /* NuevoContacto.m */,
 				D3E338EC1A74BD7E00B935E5 /* Main.storyboard */,
 				D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */,
 				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			files = (
 				D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */,
 				D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */,
+				D35487DE1A83BFE70004A062 /* NuevoContacto.m in Sources */,
 				D3E338E51A74BD7E00B935E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
