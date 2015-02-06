@@ -197,11 +197,11 @@
             </objects>
             <point key="canvasLocation" x="341" y="-1903"/>
         </scene>
-        <!--View Controller-->
+        <!--Eliminar Contacto-->
         <scene sceneID="9eg-su-LBs">
             <objects>
-                <viewController id="Jj9-Oe-H1P" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2iw-lE-ygL">
+                <viewController id="Jj9-Oe-H1P" customClass="EliminarContacto" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2iw-lE-ygL" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -229,14 +229,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wcD-Ws-4rJ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellBaja" id="wcD-Ws-4rJ" userLabel="ListasContactosCelda" customClass="ListasContactosCelda">
                                         <rect key="frame" x="0.0" y="0.0" width="527" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wcD-Ws-4rJ" id="mM9-wo-COM">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fy6-fJ-ETy">
+                                                    <rect key="frame" x="404" y="-14" width="106" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HLs-LU-L15" userLabel="Nom">
+                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wPy-eo-MCZ" userLabel="Est">
+                                                    <rect key="frame" x="259" y="-1" width="137" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Estado" destination="wPy-eo-MCZ" id="RdE-MP-7cE"/>
+                                            <outlet property="Nombre" destination="HLs-LU-L15" id="qp9-rN-1Yk"/>
+                                            <outlet property="imagen" destination="fy6-fJ-ETy" id="esB-Ew-UBp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jj9-Oe-H1P" id="6NS-3M-Ruj"/>
+                                    <outlet property="delegate" destination="Jj9-Oe-H1P" id="Jib-W8-Eve"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q3z-2H-ntV">
                                 <rect key="frame" x="298" y="112" width="172" height="46"/>
@@ -248,6 +277,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="Elimina" destination="cGf-S8-SFz" id="lIr-A1-4wj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jtn-UO-ygs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,7 +357,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="custom" id="XnX-ax-Ppg"/>
+                                    <segue destination="BYZ-38-t0r" kind="custom" identifier="" id="XnX-ax-Ppg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FgR-M3-Tsx">
@@ -341,22 +373,54 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DXJ-WB-ILO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListasContactosCelda" id="DXJ-WB-ILO" customClass="ListasContactosCelda">
                                         <rect key="frame" x="0.0" y="0.0" width="527" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXJ-WB-ILO" id="Lia-7T-JGJ">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yaM-Na-QhG">
+                                                    <rect key="frame" x="386" y="-14" width="106" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xwC-2Y-qWB" userLabel="Nom">
+                                                    <rect key="frame" x="15" y="0.0" width="218" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b3M-Ec-JUr" userLabel="Est">
+                                                    <rect key="frame" x="241" y="-1" width="137" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Estado" destination="b3M-Ec-JUr" id="Lia-Bi-zPd"/>
+                                            <outlet property="Nombre" destination="xwC-2Y-qWB" id="SRp-kR-EAD"/>
+                                            <outlet property="imagen" destination="yaM-Na-QhG" id="9Uj-u6-sie"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eiC-6p-u6Z" id="OSe-Yw-D5w"/>
+                                    <outlet property="delegate" destination="eiC-6p-u6Z" id="efC-zp-FtY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="2Ss-u2-Yes" kind="custom" identifier="Detalle" id="ytB-yK-7gn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9Y-Jz-7pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="830"/>
+            <point key="canvasLocation" x="-495" y="856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="J5i-Au-OVr">
@@ -373,14 +437,18 @@
                                 <state key="normal" title="&lt;---">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eiC-6p-u6Z" kind="custom" id="dkN-Yi-1sg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dd-eg-Oec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="2034"/>
+            <point key="canvasLocation" x="-302" y="2138"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -389,6 +457,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XnX-ax-Ppg"/>
+        <segue reference="dkN-Yi-1sg"/>
+        <segue reference="1FX-Gu-Nvj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import <Twitter/Twitter.h>
 
-@interface ListaContacto : UIViewController
+@interface ListaContacto : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *imagen;
+@property (strong, nonatomic) IBOutlet UILabel *estado;
+@property (strong, nonatomic) IBOutlet UILabel *nombre;
 
 @end

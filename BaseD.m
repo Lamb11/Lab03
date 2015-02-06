@@ -85,5 +85,57 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
+- (NSMutableArray*) listDB:(NSString*)query;
+{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char *query_stmt = [query UTF8String];
+        NSMutableArray *ar_result = [[NSMutableArray alloc] initWithCapacity:10];
+        if (sqlite3_prepare_v2(database,query_stmt, -1, &statement, NULL) == SQLITE_OK){
+            int columns = sqlite3_column_count(statement);
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                NSMutableArray *arc = [[NSMutableArray alloc] initWithCapacity:columns];
+                for(int i=0; i < (columns-1); i++){
+                    if (sqlite3_column_text(statement, i) == NULL){
+                        [arc addObject:@""];
+                    }
+                    else{
+                        [arc addObject:[NSString stringWithCString:(char *)sqlite3_column_text(statement, i)
+                                                          encoding:NSUTF8StringEncoding]
+                         ];
+                    }
+                }
+                if (sqlite3_column_blob(statement, 4) != NULL) {
+                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 4) length:sqlite3_column_bytes(statement, 4)];
+                    [arc addObject:dataimg];
+                }
+                [ar_result addObject:arc];
+            }
+            sqlite3_reset(statement);
+            return ar_result;
+        }
+    }
+    return nil;
+}
+
+- (BOOL) saveDB:(NSString*)query;
+{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char *insert_stmt = [query UTF8String];
+        sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
+        if (sqlite3_step(statement) == SQLITE_DONE){
+            sqlite3_reset(statement);
+            NSLog(@"Registro actualizado");
+            return YES;
+        } else {
+            NSLog(@"Registro FALLO (%s)", sqlite3_errmsg(database));
+            sqlite3_reset(statement);
+            return NO;
+        }
+    }
+    return NO;
+}
+
 @end
 

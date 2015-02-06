@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D323C0591A84A5130091835E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323C0581A84A5130091835E /* Social.framework */; };
+		D323C05B1A84A51B0091835E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323C05A1A84A51B0091835E /* Twitter.framework */; };
+		D323C05D1A84A5840091835E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323C05C1A84A5840091835E /* Accounts.framework */; };
+		D323C0601A84A9620091835E /* EliminarContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C05F1A84A9620091835E /* EliminarContacto.m */; };
+		D323C0691A84BEAD0091835E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C0681A84BEAD0091835E /* Globals.m */; };
 		D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487CE1A831C460004A062 /* UIKit.framework */; };
 		D35487D11A831C570004A062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D01A831C570004A062 /* Foundation.framework */; };
 		D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D21A831C680004A062 /* CoreGraphics.framework */; };
 		D35487DE1A83BFE70004A062 /* NuevoContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D35487DD1A83BFE70004A062 /* NuevoContacto.m */; };
 		D39A70F01A843B6300EA1D94 /* BaseD.m in Sources */ = {isa = PBXBuildFile; fileRef = D39A70EF1A843B6300EA1D94 /* BaseD.m */; };
 		D39A70F51A84819700EA1D94 /* ListaContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D39A70F41A84819700EA1D94 /* ListaContacto.m */; };
+		D39A70F81A8492E900EA1D94 /* ListasContactosCelda.m in Sources */ = {isa = PBXBuildFile; fileRef = D39A70F71A8492E900EA1D94 /* ListasContactosCelda.m */; };
 		D3E338E51A74BD7E00B935E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E41A74BD7E00B935E5 /* main.m */; };
 		D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338E71A74BD7E00B935E5 /* AppDelegate.m */; };
 		D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E338EA1A74BD7E00B935E5 /* Home.m */; };
@@ -35,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D323C0581A84A5130091835E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D323C05A1A84A51B0091835E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		D323C05C1A84A5840091835E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D323C05E1A84A9620091835E /* EliminarContacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminarContacto.h; sourceTree = "<group>"; };
+		D323C05F1A84A9620091835E /* EliminarContacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliminarContacto.m; sourceTree = "<group>"; };
+		D323C0671A84BEAD0091835E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		D323C0681A84BEAD0091835E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		D35487CE1A831C460004A062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D35487D01A831C570004A062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D35487D21A831C680004A062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,6 +57,8 @@
 		D39A70EF1A843B6300EA1D94 /* BaseD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseD.m; sourceTree = "<group>"; };
 		D39A70F31A84819700EA1D94 /* ListaContacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContacto.h; sourceTree = "<group>"; };
 		D39A70F41A84819700EA1D94 /* ListaContacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContacto.m; sourceTree = "<group>"; };
+		D39A70F61A8492E900EA1D94 /* ListasContactosCelda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListasContactosCelda.h; sourceTree = "<group>"; };
+		D39A70F71A8492E900EA1D94 /* ListasContactosCelda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListasContactosCelda.m; sourceTree = "<group>"; };
 		D3E338DF1A74BD7E00B935E5 /* Lab03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E338E31A74BD7E00B935E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E338E41A74BD7E00B935E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D323C05D1A84A5840091835E /* Accounts.framework in Frameworks */,
+				D323C05B1A84A51B0091835E /* Twitter.framework in Frameworks */,
+				D323C0591A84A5130091835E /* Social.framework in Frameworks */,
 				D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */,
 				D35487D11A831C570004A062 /* Foundation.framework in Frameworks */,
 				D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */,
@@ -86,6 +104,9 @@
 		D35487CD1A831C150004A062 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D323C05C1A84A5840091835E /* Accounts.framework */,
+				D323C05A1A84A51B0091835E /* Twitter.framework */,
+				D323C0581A84A5130091835E /* Social.framework */,
 				D35487D21A831C680004A062 /* CoreGraphics.framework */,
 				D35487D01A831C570004A062 /* Foundation.framework */,
 				D35487CE1A831C460004A062 /* UIKit.framework */,
@@ -127,6 +148,8 @@
 		D3E338E11A74BD7E00B935E5 /* Lab03 */ = {
 			isa = PBXGroup;
 			children = (
+				D323C0671A84BEAD0091835E /* Globals.h */,
+				D323C0681A84BEAD0091835E /* Globals.m */,
 				D3E338E71A74BD7E00B935E5 /* AppDelegate.m */,
 				D3E338E61A74BD7E00B935E5 /* AppDelegate.h */,
 				D3E338E91A74BD7E00B935E5 /* Home.h */,
@@ -135,6 +158,10 @@
 				D35487DD1A83BFE70004A062 /* NuevoContacto.m */,
 				D39A70F31A84819700EA1D94 /* ListaContacto.h */,
 				D39A70F41A84819700EA1D94 /* ListaContacto.m */,
+				D39A70F61A8492E900EA1D94 /* ListasContactosCelda.h */,
+				D39A70F71A8492E900EA1D94 /* ListasContactosCelda.m */,
+				D323C05E1A84A9620091835E /* EliminarContacto.h */,
+				D323C05F1A84A9620091835E /* EliminarContacto.m */,
 				D3E338EC1A74BD7E00B935E5 /* Main.storyboard */,
 				D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */,
 				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
@@ -272,11 +299,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */,
+				D323C0691A84BEAD0091835E /* Globals.m in Sources */,
+				D323C0601A84A9620091835E /* EliminarContacto.m in Sources */,
 				D39A70F01A843B6300EA1D94 /* BaseD.m in Sources */,
 				D39A70F51A84819700EA1D94 /* ListaContacto.m in Sources */,
 				D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */,
 				D35487DE1A83BFE70004A062 /* NuevoContacto.m in Sources */,
 				D3E338E51A74BD7E00B935E5 /* main.m in Sources */,
+				D39A70F81A8492E900EA1D94 /* ListasContactosCelda.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
