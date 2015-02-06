@@ -79,7 +79,9 @@
     NSData *imageData=UIImagePNGRepresentation(image);
     NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
     
-
+    if([[BaseD getSharedInstance]insertaDB:nombre estado:estado youtube:youtube foto:imageData]){
+        [self performSegueWithIdentifier:@"" sender:self];
+    }
     
     }
 @end
