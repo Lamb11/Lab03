@@ -7,7 +7,8 @@
 //
 
 #import "NuevoContacto.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "BaseD.h"
 @interface NuevoContacto ()
 
 @end
@@ -35,15 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)takePhoto:(UIButton *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -79,4 +71,15 @@
 }
 
 
+- (IBAction)guardar:(id)sender {
+    NSString *nombre = [self.txtnombre.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *estado = [self.txtstatus.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *youtube = [self.txtyoutube.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    UIImage* image = [self.imageView image];
+    NSData *imageData=UIImagePNGRepresentation(image);
+    NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
+    
+
+    
+    }
 @end

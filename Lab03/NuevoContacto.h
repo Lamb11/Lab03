@@ -18,4 +18,12 @@
 
 - (IBAction)selectphoto:(UIButton *)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *txtnombre;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtstatus;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtyoutube;
+
+- (IBAction)guardar:(id)sender;
+
 @end

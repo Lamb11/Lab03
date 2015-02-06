@@ -18,10 +18,12 @@ extern int valorNuevo;
 
 +(BaseD*)getSharedInstance;
 
--(BOOL)createDB;
--(BOOL)saveData:(int)puntos fecha:(NSString*)fecha;
--(NSArray*) findByRegisterNumber:(NSString*)registerNumber;
--(NSArray*) listado;
--(NSMutableArray*) listar;
+-(BOOL)crearDB;
+-(BOOL)saveDB:(NSString*)query;
+-(NSMutableArray*)listDB:(NSString*)query;
+-(NSMutableArray*)consultaDB:(NSString*)query;
+-(BOOL)insertaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto;
+-(BOOL)actualizaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto idagenda:(NSString*)idagenda;
+-(NSMutableArray*) executeQueryWithString:(NSString*)querySQL;
 
 @end

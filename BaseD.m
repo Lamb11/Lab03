@@ -8,16 +8,20 @@
 
 #import "BaseD.h"
 
+//Inicializar valores
+NSString *dbname = @"registros.db";
+const char *createStatment = "create table if not exists personas (id integer primary key AUTOINCREMENT, nombre text, estado text, youtube text, foto blob)";
 
 static BaseD *sharedInstance = nil;
 static sqlite3 *database = nil;
 static sqlite3_stmt *statement = nil;
 
+
 @implementation BaseD
 +(BaseD*)getSharedInstance{
     if (!sharedInstance) {
         sharedInstance = [[super allocWithZone:NULL]init];
-        [sharedInstance createDB];
+        [sharedInstance crearDB];
     }
     return sharedInstance;
 }
@@ -27,28 +31,20 @@ static sqlite3_stmt *statement = nil;
 }
 
 //Crear Base de Datos
--(BOOL)createDB{
+-(BOOL)crearDB{
     NSString *docsDir;
     NSArray *dirPaths;
-    // Get the documents directory
     dirPaths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = dirPaths[0];
-    // Build the path to the database file
-    databasePath = [[NSString alloc] initWithString:
-                    [docsDir stringByAppendingPathComponent: @"game.db"]];
+    databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: dbname]];
     BOOL isSuccess = YES;
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath: databasePath ] == NO)
-    {
+    if ([filemgr fileExistsAtPath: databasePath ] == NO){
         const char *dbpath = [databasePath UTF8String];
-        if (sqlite3_open(dbpath, &database) == SQLITE_OK)
-        {
+        if (sqlite3_open(dbpath, &database) == SQLITE_OK){
             char *errMsg;
-            const char *sql_stmt = "create table if not exists resultados (id integer primary key AUTOINCREMENT, puntos integer, fecha text)";
-            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg)
-                != SQLITE_OK)
-            {
+            if (sqlite3_exec(database, createStatment, NULL, NULL, &errMsg) != SQLITE_OK){
                 isSuccess = NO;
                 NSLog(@"Error al crear la tabla");
             }
@@ -63,61 +59,31 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
-//Guardar datos
-- (BOOL) saveData:(int)puntos fecha:(NSString*)fecha;
-{
+- (BOOL) inserta:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto{
     const char *dbpath = [databasePath UTF8String];
-    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
-    {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into resultados (puntos,fecha) values (\"%d\",\"%@\" )",puntos, fecha];
-        
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            sqlite3_reset(statement);
-            NSLog(@"Statement SUCCESS");
-            return YES;
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char* sqliteQuery = "INSERT INTO personas (nombre, estado, youtube, foto) VALUES (?, ?, ?, ?)";
+        sqlite3_stmt* statement;
+        if( sqlite3_prepare_v2(database, sqliteQuery,-1, &statement, NULL) == SQLITE_OK ){
+            sqlite3_bind_text(statement, 1, [nombre UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 2, [estado UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 3, [youtube UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_blob(statement, 4, [foto bytes], [foto length], SQLITE_TRANSIENT);
+            if (sqlite3_step(statement) == SQLITE_DONE){
+                sqlite3_reset(statement);
+                NSLog(@"Registro Insertado");
+                return YES;
+            }else{
+                return NO;
+            }
         } else {
-            NSLog(@"Statement FAILED (%s)", sqlite3_errmsg(database));
+            NSLog(@"Registro FALLO (%s)", sqlite3_errmsg(database));
             sqlite3_reset(statement);
             return NO;
         }
     }
     return NO;
 }
-
-//seleccionar datos
-- (NSMutableArray*) listar{
-    const char *dbpath = [databasePath UTF8String];
-    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
-    {
-        NSString *querySQL = [NSString stringWithFormat: @"select puntos, fecha from resultados order by puntos DESC LIMIT 15"];
-        const char *query_stmt = [querySQL UTF8String];
-        NSMutableArray *ar_result = [[NSMutableArray alloc] initWithCapacity:10];
-        if (sqlite3_prepare_v2(database,query_stmt, -1, &statement, NULL) == SQLITE_OK)
-        {
-            int columns = sqlite3_column_count(statement);
-            while (sqlite3_step(statement) == SQLITE_ROW)
-            {
-                NSMutableArray *arc = [[NSMutableArray alloc] initWithCapacity:columns];
-                for(int i=0; i < columns; i++){
-                    if (sqlite3_column_text(statement, i) == NULL)
-                        [arc addObject:@""];
-                    else
-                        [arc addObject:[NSString stringWithCString:(char *)sqlite3_column_text(statement, i)
-                                                          encoding:NSUTF8StringEncoding]
-                         ];
-                }
-                [ar_result addObject:arc];
-            }
-            sqlite3_reset(statement);
-            return ar_result;
-        }
-    }
-    return nil;
-}
-
 
 @end
 
