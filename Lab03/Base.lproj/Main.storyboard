@@ -82,18 +82,14 @@
             </objects>
             <point key="canvasLocation" x="-281" y="-343"/>
         </scene>
-        <!--View Controller-->
+        <!--Nuevo Contacto-->
         <scene sceneID="bif-nn-FxE">
             <objects>
-                <viewController id="BWF-n6-Lsa" sceneMemberID="viewController">
+                <viewController id="BWF-n6-Lsa" customClass="NuevoContacto" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GJG-Oq-Fpx">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YWZ-pB-mig">
-                                <rect key="frame" x="73" y="140" width="262" height="256"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T4J-kx-t6g">
                                 <rect key="frame" x="429" y="179" width="237" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,6 +99,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BWF-n6-Lsa" eventType="touchUpInside" id="FOk-o9-VTM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lku-KP-dGu">
                                 <rect key="frame" x="16" y="11" width="64" height="57"/>
@@ -171,12 +170,22 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectphoto:" destination="BWF-n6-Lsa" eventType="touchUpInside" id="LWP-73-Lzh"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YWZ-pB-mig">
+                                <rect key="frame" x="76" y="137" width="262" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ko8-gv-BvD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="YWZ-pB-mig" id="iAL-3d-Uid"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etz-fR-hqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
