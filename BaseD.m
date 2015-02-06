@@ -59,7 +59,7 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
-- (BOOL) inserta:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto{
+- (BOOL) insertaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto{
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK){
         const char* sqliteQuery = "INSERT INTO personas (nombre, estado, youtube, foto) VALUES (?, ?, ?, ?)";
