@@ -24,6 +24,9 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *txtyoutube;
 
-- (IBAction)guardar:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *guardar;
+@property (strong, nonatomic) IBOutlet UIButton *actualizar;
 
+- (IBAction)guardar:(id)sender;
+- (IBAction)actualizar:(id)sender;
 @end

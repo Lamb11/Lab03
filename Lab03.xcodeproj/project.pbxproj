@@ -12,6 +12,8 @@
 		D323C05D1A84A5840091835E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323C05C1A84A5840091835E /* Accounts.framework */; };
 		D323C0601A84A9620091835E /* EliminarContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C05F1A84A9620091835E /* EliminarContacto.m */; };
 		D323C0691A84BEAD0091835E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C0681A84BEAD0091835E /* Globals.m */; };
+		D323C06C1A84C52F0091835E /* Editar Contacto.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C06B1A84C52F0091835E /* Editar Contacto.m */; };
+		D323C06F1A84E1D90091835E /* VerMas.m in Sources */ = {isa = PBXBuildFile; fileRef = D323C06E1A84E1D90091835E /* VerMas.m */; };
 		D35487CF1A831C460004A062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487CE1A831C460004A062 /* UIKit.framework */; };
 		D35487D11A831C570004A062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D01A831C570004A062 /* Foundation.framework */; };
 		D35487D31A831C690004A062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35487D21A831C680004A062 /* CoreGraphics.framework */; };
@@ -48,6 +50,10 @@
 		D323C05F1A84A9620091835E /* EliminarContacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliminarContacto.m; sourceTree = "<group>"; };
 		D323C0671A84BEAD0091835E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		D323C0681A84BEAD0091835E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		D323C06A1A84C52F0091835E /* Editar Contacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Editar Contacto.h"; sourceTree = "<group>"; };
+		D323C06B1A84C52F0091835E /* Editar Contacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Editar Contacto.m"; sourceTree = "<group>"; };
+		D323C06D1A84E1D90091835E /* VerMas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerMas.h; sourceTree = "<group>"; };
+		D323C06E1A84E1D90091835E /* VerMas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerMas.m; sourceTree = "<group>"; };
 		D35487CE1A831C460004A062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D35487D01A831C570004A062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D35487D21A831C680004A062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +168,10 @@
 				D39A70F71A8492E900EA1D94 /* ListasContactosCelda.m */,
 				D323C05E1A84A9620091835E /* EliminarContacto.h */,
 				D323C05F1A84A9620091835E /* EliminarContacto.m */,
+				D323C06A1A84C52F0091835E /* Editar Contacto.h */,
+				D323C06B1A84C52F0091835E /* Editar Contacto.m */,
+				D323C06D1A84E1D90091835E /* VerMas.h */,
+				D323C06E1A84E1D90091835E /* VerMas.m */,
 				D3E338EC1A74BD7E00B935E5 /* Main.storyboard */,
 				D3E338F11A74BD7E00B935E5 /* LaunchScreen.xib */,
 				D3E338EF1A74BD7E00B935E5 /* Images.xcassets */,
@@ -300,10 +310,12 @@
 			files = (
 				D3E338EB1A74BD7E00B935E5 /* Home.m in Sources */,
 				D323C0691A84BEAD0091835E /* Globals.m in Sources */,
+				D323C06C1A84C52F0091835E /* Editar Contacto.m in Sources */,
 				D323C0601A84A9620091835E /* EliminarContacto.m in Sources */,
 				D39A70F01A843B6300EA1D94 /* BaseD.m in Sources */,
 				D39A70F51A84819700EA1D94 /* ListaContacto.m in Sources */,
 				D3E338E81A74BD7E00B935E5 /* AppDelegate.m in Sources */,
+				D323C06F1A84E1D90091835E /* VerMas.m in Sources */,
 				D35487DE1A83BFE70004A062 /* NuevoContacto.m in Sources */,
 				D3E338E51A74BD7E00B935E5 /* main.m in Sources */,
 				D39A70F81A8492E900EA1D94 /* ListasContactosCelda.m in Sources */,

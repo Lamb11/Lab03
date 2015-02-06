@@ -181,12 +181,24 @@
                                     <action selector="selectphoto:" destination="BWF-n6-Lsa" eventType="touchUpInside" id="LWP-73-Lzh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3wd-qZ-zsO">
+                                <rect key="frame" x="648" y="20" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Actualizar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actualizar:" destination="BWF-n6-Lsa" eventType="touchUpInside" id="8fM-d1-4J8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ko8-gv-BvD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="actualizar" destination="3wd-qZ-zsO" id="vCu-cD-xOg"/>
+                        <outlet property="guardar" destination="Zci-iH-Ejh" id="j2v-ap-iGy"/>
                         <outlet property="imageView" destination="YWZ-pB-mig" id="iAL-3d-Uid"/>
                         <outlet property="txtnombre" destination="bjv-mw-haa" id="KAa-Hs-yUg"/>
                         <outlet property="txtstatus" destination="DAP-Vb-gZh" id="Ruz-lf-kId"/>
@@ -195,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etz-fR-hqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="-1903"/>
+            <point key="canvasLocation" x="169" y="-2053"/>
         </scene>
         <!--Eliminar Contacto-->
         <scene sceneID="9eg-su-LBs">
@@ -285,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="771" y="-343"/>
         </scene>
-        <!--View Controller-->
+        <!--Editar Contacto-->
         <scene sceneID="Oxn-fV-bBq">
             <objects>
-                <viewController id="wSx-ch-163" sceneMemberID="viewController">
+                <viewController id="wSx-ch-163" customClass="EditarContacto" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQZ-PH-9nB">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,14 +329,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nrV-QW-slN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellbaja2" id="nrV-QW-slN" customClass="ListasContactosCelda">
                                         <rect key="frame" x="0.0" y="0.0" width="527" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nrV-QW-slN" id="SLA-zd-Kcb">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3CC-tE-NP1" userLabel="Est">
+                                                    <rect key="frame" x="255" y="-2" width="137" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7T1-an-1S9">
+                                                    <rect key="frame" x="400" y="-13" width="106" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lIq-s0-t9y" userLabel="Nom">
+                                                    <rect key="frame" x="14" y="-3" width="218" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Estado" destination="3CC-tE-NP1" id="WGt-p4-yTj"/>
+                                            <outlet property="Nombre" destination="lIq-s0-t9y" id="kzG-wm-Gzf"/>
+                                            <outlet property="imagen" destination="7T1-an-1S9" id="9Hy-2y-h5w"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wSx-ch-163" id="Abh-p5-y3x"/>
+                                    <outlet property="delegate" destination="wSx-ch-163" id="1ZK-z8-wM7"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i3m-5B-i8k">
                                 <rect key="frame" x="298" y="106" width="172" height="46"/>
@@ -336,6 +377,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BWF-n6-Lsa" kind="custom" identifier="Editar" id="K6M-3Q-h9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aS-ZY-1Tq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -422,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="-495" y="856"/>
         </scene>
-        <!--View Controller-->
+        <!--Ver Mas-->
         <scene sceneID="J5i-Au-OVr">
             <objects>
-                <viewController id="2Ss-u2-Yes" sceneMemberID="viewController">
+                <viewController id="2Ss-u2-Yes" customClass="VerMas" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOp-iA-0hZ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -441,14 +485,48 @@
                                     <segue destination="eiC-6p-u6Z" kind="custom" id="dkN-Yi-1sg"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="gtV-GM-qzg">
+                                <rect key="frame" x="360" y="490" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Zib-hI-7y0">
+                                <rect key="frame" x="79" y="94" width="224" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="giU-Gc-9Rw">
+                                <rect key="frame" x="374" y="143" width="199" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xoP-NX-Vzm">
+                                <rect key="frame" x="374" y="217" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="G4v-PQ-UNK">
+                                <rect key="frame" x="84" y="434" width="582" height="443"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="estado" destination="xoP-NX-Vzm" id="k6U-kH-swI"/>
+                        <outlet property="foto" destination="Zib-hI-7y0" id="OGT-4B-eMb"/>
+                        <outlet property="nombre" destination="giU-Gc-9Rw" id="XsE-JZ-Ocx"/>
+                        <outlet property="webView" destination="G4v-PQ-UNK" id="vyw-QZ-tNZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dd-eg-Oec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="2138"/>
+            <point key="canvasLocation" x="-36" y="2286"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -458,6 +536,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="dkN-Yi-1sg"/>
+        <segue reference="K6M-3Q-h9g"/>
         <segue reference="1FX-Gu-Nvj"/>
     </inferredMetricsTieBreakers>
 </document>

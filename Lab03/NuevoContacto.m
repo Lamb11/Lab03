@@ -11,6 +11,11 @@
 #import "BaseD.h"
 #define kOFFSET_FOR_KEYBOARD 100.0
 
+NSMutableArray *datos;
+NSString *idTemp;
+NSString *idSelect;
+int indice;
+
 @interface NuevoContacto ()
 
 @end
@@ -19,7 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+
+    
+    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -41,6 +50,10 @@
                                              selector:@selector(keyboardWillHide)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+ 
+        
+
 
 }
 
@@ -143,6 +156,19 @@
     else if (self.view.frame.origin.y < 0)
     {
         [self setViewMovedUp:NO];
+    }
+}
+
+- (IBAction)actualizar:(id)sender {
+    NSString *nombre = self.txtnombre.text;
+    NSString *estado = self.txtstatus.text;
+    NSString *youtube = self.txtyoutube.text;
+    UIImage* image = [self.imageView image];
+    NSData *imageData=UIImagePNGRepresentation(image);
+    NSLog(@"Las variables son: %@, %@, %@", nombre, estado, youtube);
+    
+    if([[BaseD getSharedInstance]actualizaDB:nombre estado:estado youtube:youtube foto:imageData idagenda:idTemp]){
+        [self performSegueWithIdentifier:@"Home" sender:self];
     }
 }
 

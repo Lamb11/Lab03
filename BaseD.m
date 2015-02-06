@@ -137,5 +137,63 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
+- (BOOL) actualizaDB:(NSString*)nombre estado:(NSString*)estado youtube:(NSString*)youtube foto:(NSData*)foto idagenda:(NSString*)idagenda{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char* sqliteQuery = "UPDATE personas SET nombre = ?, estado = ?, youtube = ?, foto = ? WHERE id = ?";
+        sqlite3_stmt* statement;
+        if( sqlite3_prepare_v2(database, sqliteQuery,-1, &statement, NULL) == SQLITE_OK ){
+            sqlite3_bind_text(statement, 1, [nombre UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 2, [estado UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 3, [youtube UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_blob(statement, 4, [foto bytes], [foto length], SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 5, [idagenda UTF8String], -1, SQLITE_TRANSIENT);
+            if (sqlite3_step(statement) == SQLITE_DONE){
+                sqlite3_reset(statement);
+                NSLog(@"Registro actualizado");
+                return YES;
+            }else{
+                return NO;
+            }
+        } else {
+            NSLog(@"Registro FALLO (%s)", sqlite3_errmsg(database));
+            sqlite3_reset(statement);
+            return NO;
+        }
+    }
+    return NO;
+}
+
+- (NSMutableArray*) consultaDB:(NSString*)query;
+{
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK){
+        const char *query_stmt = [query UTF8String];
+        if (sqlite3_prepare_v2(database,query_stmt, -1, &statement, NULL) == SQLITE_OK){
+            int columns = sqlite3_column_count(statement);
+            NSMutableArray *arc = [[NSMutableArray alloc] initWithCapacity:columns];
+            while (sqlite3_step(statement) == SQLITE_ROW){
+                for(int i=0; i < (columns-1); i++){
+                    if (sqlite3_column_text(statement, i) == NULL){
+                        [arc addObject:@""];
+                    }
+                    else{
+                        [arc addObject:[NSString stringWithCString:(char *)sqlite3_column_text(statement, i)
+                                                          encoding:NSUTF8StringEncoding]
+                         ];
+                    }
+                }
+                if (sqlite3_column_blob(statement, 4) != NULL) {
+                    NSData *dataimg = [[NSData alloc] initWithBytes:sqlite3_column_blob(statement, 4) length:sqlite3_column_bytes(statement, 4)];
+                    [arc addObject:dataimg];
+                }
+            }
+            sqlite3_reset(statement);
+            return arc;
+        }
+    }
+    return nil;
+}
+
 @end
 
